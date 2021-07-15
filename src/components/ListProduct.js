@@ -12,7 +12,7 @@ const ListarCategorias = () => {
     }, []);
 
     const buscaCategorias = () => {
-        api.getAll()
+        api.getAllProduct()
             .then(response => {
                 setCategorias(response.data);
                 console.log(response.data);
@@ -30,13 +30,13 @@ const ListarCategorias = () => {
     return (
         <div className="container list row">
             <div className="col-md-6">
-                <h4>Categorias</h4>
-                <Link to="/novaCategoria" className="btn btn-warning">
-                    Criar nova Categoria
+                <h4>Produtos</h4>
+                <Link to="/newProduct" className="btn btn-warning">
+                    Criar novo Produto
                 </Link>
                 <ul className="list-group py-1">
-                    {categorias &&
-                        categorias.map((categoria, index) => (
+                    {categorias.content &&
+                        categorias.content.map((categoria, index) => (
                             <li  className={"list-group-item " + (index === currentIndex ? "active" : "")}
                                  onClick={() => setCategoriaAtiva(categoria, index)}
                                  key={index}
@@ -52,17 +52,17 @@ const ListarCategorias = () => {
                         <h4>Detalhe</h4>
                         <div>
                             <label>
-                                <strong>Categoria:</strong>
+                                <strong>Produto:</strong>
                             </label>{" "}
                             {categoriaSelecionada.name}
                         </div>
 
-                        <Link to={"/editaCategoria/" + categoriaSelecionada.id} className="btn btn-warning">Editar</Link>
+                        <Link to={"/editProduct/" + categoriaSelecionada.id} className="btn btn-warning">Editar</Link>
                     </div>
                 ) : (
                     <div>
                         <br />
-                        <p>Escolha uma categoria.</p>
+                        <p>Escolha um produto ao lado.</p>
                     </div>
                 )}
             </div>

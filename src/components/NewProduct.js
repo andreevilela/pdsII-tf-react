@@ -4,7 +4,10 @@ import * as api from "../services/Endpoints"
 const NovaCategoria = () => {
     const estadoInicialCategoria = {
         id: null,
-        name: ""
+        name: "",
+        description: "",
+        price: "",
+        imgUrl: ""
     };
     const [categoria, setCategoria] = useState(estadoInicialCategoria);
     const [submitted, setSubmitted] = useState(false);
@@ -18,17 +21,21 @@ const NovaCategoria = () => {
         setCategoria(estadoInicialCategoria);
         setSubmitted(false);
     };
-    
+
     const enviarRequisicao = () => {
         var data = {
-            name: categoria.nome
+            name: categoria.name,
+            description: categoria.description,
+            price: categoria.price
         };
         console.log(data)
-        api.create(data)
+        api.createP(data)
             .then(response => {
                 setCategoria({
                     id: response.data.id,
-                    nome: response.data.nome
+                    name: response.data.name,
+                    description: response.data.description,
+                    price: response.data.price
                 });
                 setSubmitted(true);
                 console.log(response.data);
@@ -50,10 +57,16 @@ const NovaCategoria = () => {
                     ) : (
                         <div>
                             <div className="form-group">
-                            <center> <h3>Nova Categoria</h3></center>
+                                <center> <h3>Novo Produto</h3></center>
                                 <br />
-                                <h5>Categoria</h5>                               
-                                <input className="form-control mb-3" type="text" name="nome" value={categoria.nome} onChange={trataCampo} />
+                                <h5>Nome</h5>                                
+                                <input className="form-control mb-3" type="text" name="name" value={categoria.name} onChange={trataCampo} /> 
+                                <h5>Descrição</h5>
+                                <input className="form-control mb-3" type="text" name="description" value={categoria.description} onChange={trataCampo} />
+                                <h5>Preço</h5>                                                              
+                                <input className="form-control mb-3" type="text" name="price" value={categoria.price} onChange={trataCampo} /> 
+                                           
+                                                        
                             </div>
 
                             <button onClick={enviarRequisicao} className="btn btn-primary mt-4">Cadastrar</button>
