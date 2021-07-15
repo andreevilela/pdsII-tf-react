@@ -40,7 +40,7 @@ function App() {
           </li>
           <li className="nav-item">
             <Link onClick={sair} className="nav-link">
-              Sair
+            <span className="">Sair</span>
             </Link>
           </li>
         </div>     
@@ -69,6 +69,11 @@ function sair(ev) {
   localStorage.clear();
   alert("Até logo!")
   window.location.href = '/login';
+
+} 
+
+function validar(ev) {
+  window.location.reload();
 
 } 
 

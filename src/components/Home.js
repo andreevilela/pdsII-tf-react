@@ -1,3 +1,12 @@
 export default function Home() {
-    return (<h1>Home</h1>)
+    return (
+        
+            <button onClick={validar}>Validar Token</button>
+        );
+    
 }
+
+function validar(ev) {
+    alert('Token válido por 5 min.')
+    window.location.reload();
+  } 

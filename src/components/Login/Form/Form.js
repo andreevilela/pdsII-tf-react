@@ -36,11 +36,13 @@ const Form = () => {
         <div className="layoutLogin">
             <form onSubmit={onSubmit}>
                 <div className="promotion-form__group">
+                    <h1>Login</h1>
+                    <br />
                     <label htmlFor="email">E-mail</label>
                     <input id="email" name="email" type="email" placeholder="Seu email" onChange={onChange} value={values.user}/>
                     <label htmlFor="password">Senha</label>
                     <input id="password" name="password" type="password" placeholder="Senha" onChange={onChange}/>
-                    <button type="submit">Login</button>
+                    <button type="submit">Logar</button>
                 </div>
             </form>
         </div>
