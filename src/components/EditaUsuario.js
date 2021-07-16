@@ -72,9 +72,11 @@ const EditaUsuario = props => {
                                     />
                                 </div>
                             </form>
-
-                            <button className="btn btn-danger danger mt-3" onClick={excluirUsuario}>Excluir</button>
-                            <button type="submit" className="btn btn-primary mt-3 mx-3" onClick={atualizarUsuario}>
+                            <br />
+                            <button className="btn btn-danger danger" onClick={excluirUsuario}>Excluir</button>
+                            <br />
+                            <br />
+                            <button type="submit" className="btn btn-primary" onClick={atualizarUsuario}>
                                 Atualizar
                             </button>
                             <p>{message}</p>

@@ -1,7 +1,9 @@
 export default function Home() {
     return (
-        
-            <button onClick={validar}>Validar Token</button>
+            <div style={{width:"35%"}}>
+                <button onClick={validar}>Validar Token</button>
+            </div>
+            
         );
     
 }

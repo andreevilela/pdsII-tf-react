@@ -70,9 +70,11 @@ const EditaCategoria = props => {
                                     />
                                 </div>
                             </form>
-
-                            <button className="btn btn-danger danger mt-3" onClick={excluirCategoria}>Excluir</button>
-                            <button type="submit" className="btn btn-primary mt-3 mx-3" onClick={atualizarCategoria}>
+                            <br />
+                            <button className="btn btn-danger danger" onClick={excluirCategoria}>Excluir</button>
+                            <br />
+                            <br />
+                            <button type="submit" className="btn btn-primary" onClick={atualizarCategoria}>
                                 Atualizar
                             </button>
                             <p>{message}</p>

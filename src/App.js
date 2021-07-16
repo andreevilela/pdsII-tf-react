@@ -18,33 +18,30 @@ function App() {
   
   return (
     <BrowserRouter>
-      <nav className="container navbar navbar-expand navbar-dark bg-secondary">
-        <h1 className="navbar-brand">
-          
-        </h1>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item">
-            <Link to="/categorias" className="nav-link">
-              Categorias
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/produtos" className="nav-link">
-              Produtos
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/usuarios" className="nav-link">
-              Usuários
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link onClick={sair} className="nav-link">
-            <span className="">Sair</span>
-            </Link>
-          </li>
-        </div>     
-      </nav>
+      <div>
+          <ul className="menu">
+            <li className="column">
+              <Link to="/categorias" className="link">
+                Categorias
+              </Link>
+            </li>
+            <li className="column">
+              <Link to="/produtos" className="link">
+                Produtos
+              </Link>
+            </li>
+            <li className="column">
+              <Link to="/usuarios" className="link">
+                Usuários
+              </Link>
+            </li>
+            <li className="column">
+              <Link onClick={sair} className="link">
+                Sair
+              </Link>
+            </li>
+          </ul>
+      </div>
 
       <div className="container mt-3">
         <Switch>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as api from "../services/Endpoints"
 
 const EditProduct = props => {
-    const estadoInicial = { 
+    const estadoInicial = {
         id: null,
         name: "",
         description: "",
@@ -71,11 +71,38 @@ const EditProduct = props => {
                                         value={usuario.name}
                                         onChange={trataCampo}
                                     />
+
+                                </div>
+                                <br />
+                                <div className="form-group">
+                                    <h5>Descrição</h5>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="description"
+                                        name="description"
+                                        value={usuario.description}
+                                        onChange={trataCampo}
+                                    />
+                                </div>
+                                <br />
+                                <div className="form-group">
+                                    <h5>Preço</h5>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="price"
+                                        name="price"
+                                        value={usuario.price}
+                                        onChange={trataCampo}
+                                    />
                                 </div>
                             </form>
-
-                            <button className="btn btn-danger danger mt-3" onClick={excluirUsuario}>Excluir</button>
-                            <button type="submit" className="btn btn-primary mt-3 mx-3" onClick={atualizarUsuario}>
+                            <br />
+                            <button className="btn btn-danger danger" onClick={excluirUsuario}>Excluir</button>
+                            <br />
+                            <br />
+                            <button type="submit" className="btn btn-primary" onClick={atualizarUsuario}>
                                 Atualizar
                             </button>
                             <p>{message}</p>
